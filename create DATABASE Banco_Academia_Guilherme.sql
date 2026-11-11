@@ -248,3 +248,14 @@ FROM   Alunos;
 
 SELECT *
 FROM   Alunos;
+
+SELECT COUNT(*) AS QuantidadeDeAlunos
+FROM   Alunos; -- Conta a quantidade de alunos cadastrados
+
+SELECT COUNT(*) AS QuantidadeDeMatriculasComNota
+FROM   Matriculas;
+
+SELECT AVG(NotaFinal) AS MediaDasNotas,
+       MAX(NotaFinal) AS MaiorNota,
+       MIN(NotaFinal) AS MenorNota
+FROM   Matriculas;
