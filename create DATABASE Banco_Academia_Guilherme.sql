@@ -204,3 +204,10 @@ SET    NotaFinal       = 7.5,
        StatusMatricula = 'Concluída'
 WHERE  IdAluno = 2
        AND IdCurso = 3; -- Altera a nota final e o status da matrícula com IdMatricula igual a 4
+
+SELECT * FROM Alunos
+SELECT * FROM Matriculas; -- Verifica se a alteração foi realizada com sucesso
+
+SELECT
+FROM Matriculas
+WHERE IdAluno = 2 AND IdCurso = 3; -- Verifica se a alteração foi realizada com sucesso
