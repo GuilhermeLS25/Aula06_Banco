@@ -205,9 +205,43 @@ SET    NotaFinal       = 7.5,
 WHERE  IdAluno = 2
        AND IdCurso = 3; -- Altera a nota final e o status da matrícula com IdMatricula igual a 4
 
-SELECT * FROM Alunos
-SELECT * FROM Matriculas; -- Verifica se a alteração foi realizada com sucesso
+SELECT *
+FROM   Alunos;
 
-SELECT
-FROM Matriculas
-WHERE IdAluno = 2 AND IdCurso = 3; -- Verifica se a alteração foi realizada com sucesso
+SELECT *
+FROM   Matriculas; -- Verifica se a alteração foi realizada com sucesso
+
+SELECT *
+FROM   Matriculas
+WHERE  IdAluno = 2
+       AND IdCurso = 3; -- Verifica se a alteração foi realizada com sucesso
+
+SELECT *
+FROM   Alunos;
+
+-- Desativar Alunos da turma 2INFO-B
+UPDATE Alunos
+SET    Ativo = 0
+WHERE  Turma = '2INFO-B'; -- Desativa todos os alunos da turma
+
+SELECT *
+FROM   Alunos;
+
+-- Ativar Alunos da turma 2INFO-B
+UPDATE Alunos
+SET    Ativo = 1
+WHERE  Turma = '2INFO-B'; -- Ativa todos os alunos da turma
+
+-- Excluindo Dados com DELETE
+-- DELETE: Exclui os dados de uma tabela. A sintaxe básica é: DELETE FROM nome_da_tabela WHERE condição
+DELETE Alunos
+WHERE  IdAluno = 1; -- Exclui o aluno com IdAluno igual a 1
+
+SELECT Nome,
+       UPPER(Nome) AS NomeMaiusculo, -- Converte o nome para maiúsculo
+       LOWER(Nome) AS NomeMinusculo, -- Converte o nome para minúsculo
+       LEN(Nome) AS QuantidedeDeCaracteres, -- Conta a quantidade de caracteres do nome
+       CONCAT(Nome, ' - ', Turma) AS NomeETurma, -- Concatena o nome e a turma
+       FORMAT(DataNascimento, 'dd/MM/yyyy') AS DataNascimentoFormatada, -- Formata a data de nascimento para o formato dd/MM/yyyy
+       DATEDIFF(YEAR, DataNascimento, GETDATE()) AS IdadeAproximada -- Calcula a idade aproximada do aluno
+FROM   Alunos;
