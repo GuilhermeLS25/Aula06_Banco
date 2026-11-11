@@ -245,3 +245,6 @@ SELECT Nome,
        FORMAT(DataNascimento, 'dd/MM/yyyy') AS DataNascimentoFormatada, -- Formata a data de nascimento para o formato dd/MM/yyyy
        DATEDIFF(YEAR, DataNascimento, GETDATE()) AS IdadeAproximada -- Calcula a idade aproximada do aluno
 FROM   Alunos;
+
+SELECT *
+FROM   Alunos;
